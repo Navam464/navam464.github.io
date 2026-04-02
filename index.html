@@ -133,6 +133,19 @@
   .gallery-item:hover { border-color: var(--gold); transform: scale(1.01); }
   .gallery-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #e8e0d0 0%, #d4c9b5 100%); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(11,31,58,0.4); flex-direction: column; gap: 8px; }
   .gallery-placeholder-icon { font-size: 2rem; opacity: 0.4; }
+  .gallery-item { position: relative; }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(11,31,58,0.75) 0%, transparent 55%);
+    display: flex; align-items: flex-end; padding: 16px;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay span {
+    color: #fff; font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600; letter-spacing: 0.04em;
+  }
+
 
   /* CONTACT */
   .contact { background: var(--section-bg); }
@@ -384,12 +397,18 @@
     <a href="#" class="btn-ghost" style="color:var(--navy);border-color:var(--light-border);">View All Photos &#8594;</a>
   </div>
   <div class="gallery-grid">
-    <a href="gallery.html" class="gallery-item wide" style="text-decoration:none;"><div class="gallery-placeholder"><span class="gallery-placeholder-icon">&#128247;</span>Annual Meetup 2024</div></a>
-    <a href="gallery.html?album=campus-life" class="gallery-item" style="text-decoration:none;"><div class="gallery-placeholder"><span class="gallery-placeholder-icon">&#127979;</span>Campus Life</div></a>
-    <a href="gallery.html?album=sports-day" class="gallery-item" style="text-decoration:none;"><div class="gallery-placeholder"><span class="gallery-placeholder-icon">&#127942;</span>Sports Day</div></a>
-    <a href="gallery.html?album=silver-jubilee-2012" class="gallery-item" style="text-decoration:none;"><div class="gallery-placeholder"><span class="gallery-placeholder-icon">&#127917;</span>Silver Jubilee 2012</div></a>
-    <div class="gallery-item"><div class="gallery-placeholder"><span class="gallery-placeholder-icon">&#128218;</span>Scholarship Ceremony</div></div>
-    <div class="gallery-item wide"><div class="gallery-placeholder"><span class="gallery-placeholder-icon">&#127749;</span>Golden Jubilee Reunion — Mahe</div></div>
+    <a href="gallery.html?album=campus-life" class="gallery-item" style="text-decoration:none;">
+      <img src="images/gallery/campus-life/Campus life 1.jpeg" alt="Campus Life" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      <div class="gallery-overlay"><span>Campus Life</span></div>
+    </a>
+    <a href="gallery.html?album=sports-day" class="gallery-item" style="text-decoration:none;">
+      <img src="images/gallery/sports-day/Sports 1.jpeg" alt="Sports Day" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      <div class="gallery-overlay"><span>Sports Day</span></div>
+    </a>
+    <a href="gallery.html?album=silver-jubilee-2012" class="gallery-item wide" style="text-decoration:none;">
+      <img src="images/gallery/silver-jubilee-2012/SJ 1.jpeg" alt="Silver Jubilee Celebration, 2012" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      <div class="gallery-overlay"><span>Silver Jubilee Celebration, 2012</span></div>
+    </a>
   </div>
 </section>
 
